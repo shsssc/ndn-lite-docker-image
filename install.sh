@@ -42,6 +42,7 @@ make install
 cd ../..
 
 apt-get install -y wget python3-dev libzbar-dev libsnappy-dev python3-pip python3-venv
+apt clean -y
 
 export VER="1.20"
 wget https://github.com/google/leveldb/archive/v${VER}.tar.gz
