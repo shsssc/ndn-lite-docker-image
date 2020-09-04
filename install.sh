@@ -15,6 +15,7 @@ apt-get install -y doxygen graphviz python-sphinx
 apt install -y  libpcap-dev build-essential libboost-all-dev libssl-dev libsqlite3-dev pkg-config python2-minimal
 
 cd ndn-cxx
+git checkout tags/ndn-cxx-0.7.0
 ./waf configure
 ./waf -j2
 ./waf install
@@ -22,6 +23,7 @@ cd ndn-cxx
 cd ..
 
 cd NFD
+git checkout tags/NFD-0.7.0
 ./waf configure
 ./waf -j2
 ./waf install
