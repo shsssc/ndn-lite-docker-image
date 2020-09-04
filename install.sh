@@ -17,7 +17,7 @@ apt install -y  libpcap-dev build-essential libboost-all-dev libssl-dev libsqlit
 cd ndn-cxx
 git checkout tags/ndn-cxx-0.7.0
 ./waf configure
-./waf -j2
+./waf -j`nproc`
 ./waf install
 ./waf clean
 cd ..
@@ -25,7 +25,7 @@ cd ..
 cd NFD
 git checkout tags/NFD-0.7.0
 ./waf configure
-./waf -j2
+./waf -j`nproc`
 ./waf install
 ./waf clean
 cd ..
@@ -39,11 +39,13 @@ cd ndn-iot-package-over-posix
 mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
-make -j2
+make -j`nproc`
 make install
 cd ../..
 
 apt-get install -y wget python3-dev libzbar-dev libsnappy-dev python3-pip python3-venv
+pip3 install pyqrcode
+pip3 install pypng
 apt clean -y
 
 export VER="1.20"
